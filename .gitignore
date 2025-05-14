@@ -1,0 +1,5 @@
+# Fichiers à ignorer
+data/input/*
+.env
+__pycache__/
+*.pyc
