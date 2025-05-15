@@ -1,6 +1,6 @@
 # First-Small-ETL
 
-Un projet de pipeline ETL (Extract, Transform, Load) minimaliste conçu à des fins d'apprentissage. Ce pipeline extrait des données d'un fichier CSV contenant des informations sur des voitures, les transforme, puis les charge dans une base de données PostgreSQL.
+Un projet de pipeline ETL (Extract, Transform, Load) minimaliste conçu à des fins d'apprentissage. Ce pipeline extrait des données d'un fichier CSV contenant des informations sur des voitures, les transforme, puis les charge dans une base de données PostgreSQL. Le pipeline contient aussi quelques queries sql à run ensuite, dont les résultats seront sauvegardés.
 
 ---
 
@@ -84,19 +84,17 @@ python src/run_queries.py
 - Les résultats de chaque requête seront sauvegardés dans le dossier `query_results/` avec des noms correspondants (par exemple, `query_results/max_horsepower.csv`).
 
 #### **Description des requêtes SQL**
-Voici une description des requêtes SQL présentes dans le dossier `sql/` :
+Voici ce que font les différentes requêtes implémentées dans le pipeline `sql/` :
 
 1. **`max_horsepower.sql`** :
-   - Cette requête sélectionne la voiture avec la puissance maximale (`horsepower_hp`) dans la base de données.
-   - **Exemple de sortie** : La voiture et sa puissance maximale.
+   - Sélectionne la voiture avec la puissance maximale (`horsepower_hp`) dans la base de données.
 
 2. **`cars_by_transmission.sql`** :
-   - Cette requête regroupe les voitures par type de transmission (`Transmission`) et compte le nombre de voitures pour chaque type.
-   - **Exemple de sortie** : Nombre de voitures avec transmission manuelle ou automatique.
+   - Regroupe les voitures par type de transmission (`Transmission`) et compte le nombre de voitures pour chaque type.
 
 3. **`avg_horsepower.sql`** :
-   - Cette requête calcule la puissance moyenne (`horsepower_hp`) des voitures en fonction du nombre de cylindres (`Cylinders`).
-   - **Exemple de sortie** : Cylindres et puissance moyenne correspondante.
+   - Calcule la puissance moyenne (`horsepower_hp`) des voitures en fonction du nombre de cylindres (`Cylinders`).
+  
 
 ---
 
@@ -111,7 +109,7 @@ first-small-etl/
 │   └── exploration.ipynb     # Notebook Jupyter pour l'exploration des données
 ├── query_results/            # Résultats des requêtes SQL (CSV générés)
 ├── sql/
-│   ├── max_horsepower.sql    # Exemple de requête SQL
+│   ├── max_horsepower.sql    
 │   ├── cars_by_transmission.sql
 │   └── avg_horsepower.sql
 ├── src/
