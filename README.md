@@ -83,6 +83,21 @@ python src/run_queries.py
 - Placez vos fichiers `.sql` dans le dossier `sql/` (par exemple, `sql/max_horsepower.sql`).
 - Les résultats de chaque requête seront sauvegardés dans le dossier `query_results/` avec des noms correspondants (par exemple, `query_results/max_horsepower.csv`).
 
+#### **Description des requêtes SQL**
+Voici une description des requêtes SQL présentes dans le dossier `sql/` :
+
+1. **`max_horsepower.sql`** :
+   - Cette requête sélectionne la voiture avec la puissance maximale (`horsepower_hp`) dans la base de données.
+   - **Exemple de sortie** : La voiture et sa puissance maximale.
+
+2. **`cars_by_transmission.sql`** :
+   - Cette requête regroupe les voitures par type de transmission (`Transmission`) et compte le nombre de voitures pour chaque type.
+   - **Exemple de sortie** : Nombre de voitures avec transmission manuelle ou automatique.
+
+3. **`avg_horsepower.sql`** :
+   - Cette requête calcule la puissance moyenne (`horsepower_hp`) des voitures en fonction du nombre de cylindres (`Cylinders`).
+   - **Exemple de sortie** : Cylindres et puissance moyenne correspondante.
+
 ---
 
 ## 📂 Structure du projet
