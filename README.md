@@ -8,7 +8,8 @@ Un projet de pipeline ETL (Extract, Transform, Load) minimaliste conçu à des f
 - **Extraction** : Lecture des données à partir d'un fichier CSV (`cars.csv`) dans un DataFrame pandas.
 - **Transformation** : Nettoyage et renommage des colonnes, remplacement de valeurs et préparation des données pour le chargement.
 - **Chargement** : Insertion des données transformées dans une table PostgreSQL.
-- **Modularité** : Scripts séparés pour chaque étape (Extraction, Transformation, Chargement) et un script principal pour orchestrer l'ensemble du pipeline.
+- **Exécution de requêtes SQL** : Gestion des requêtes SQL dynamiques via des fichiers `.sql` et sauvegarde des résultats dans des fichiers CSV.
+- **Modularité** : Scripts séparés pour chaque étape (Extraction, Transformation, Chargement, Requêtes SQL) et un script principal pour orchestrer l'ensemble du pipeline.
 
 ---
 
@@ -53,25 +54,34 @@ Pour exécuter ce pipeline, vous aurez besoin de :
 
 ## 🚀 Utilisation
 
-1. **Exécuter le pipeline ETL** :
-   Lancez le script principal pour exécuter toutes les étapes (Extraction, Transformation, Chargement) :
-   ```bash
-   python src/run.py
-   ```
+### **Exécuter le pipeline ETL complet**
+Lancez le script principal pour exécuter toutes les étapes (Extraction, Transformation, Chargement) :
+```bash
+python src/run.py
+```
 
-2. **Exécuter les étapes individuellement** :
-   - Extraction :
-     ```bash
-     python src/extract.py
-     ```
-   - Transformation :
-     ```bash
-     python src/transform.py
-     ```
-   - Chargement :
-     ```bash
-     python src/load.py
-     ```
+### **Exécuter les étapes individuellement**
+- **Extraction** :
+  ```bash
+  python src/extract.py
+  ```
+- **Transformation** :
+  ```bash
+  python src/transform.py
+  ```
+- **Chargement** :
+  ```bash
+  python src/load.py
+  ```
+
+### **Exécuter les requêtes SQL et sauvegarder les résultats**
+Utilisez le script `run_queries.py` pour exécuter les requêtes SQL enregistrées dans des fichiers `.sql` et sauvegarder les résultats dans des fichiers CSV :
+```bash
+python src/run_queries.py
+```
+
+- Placez vos fichiers `.sql` dans le dossier `sql/` (par exemple, `sql/max_horsepower.sql`).
+- Les résultats de chaque requête seront sauvegardés dans le dossier `query_results/` avec des noms correspondants (par exemple, `query_results/max_horsepower.csv`).
 
 ---
 
@@ -84,19 +94,25 @@ first-small-etl/
 │       └── cars.csv          # Fichier de données d'entrée
 ├── notebooks/
 │   └── exploration.ipynb     # Notebook Jupyter pour l'exploration des données
+├── query_results/            # Résultats des requêtes SQL (CSV générés)
+├── sql/
+│   ├── max_horsepower.sql    # Exemple de requête SQL
+│   ├── cars_by_transmission.sql
+│   └── avg_horsepower.sql
 ├── src/
 │   ├── extract.py            # Gestion de l'extraction des données
 │   ├── transform.py          # Gestion de la transformation des données
 │   ├── load.py               # Gestion du chargement des données
-│   └── run.py                # Orchestration du processus ETL
+│   ├── run.py                # Orchestration du processus ETL
+│   ├── run_queries.py        # Exécution des requêtes SQL et sauvegarde des résultats
 ├── requirements.txt          # Dépendances des paquets Python
+├── .env                      # Fichier pour les variables d'environnement
 └── README.md                 # Documentation du projet
 ```
 
 ---
 
 ## 🐾 Améliorations futures
-- **Intégration à la base de données** : Ajouter des requêtes SQL directement dans les scripts du pipeline ETL pour simplifier le workflow, remplaçant l'exécution manuelle dans `pgcli`.
 - **Tests** : Implémenter des tests unitaires et d'intégration pour chaque étape ETL afin de garantir la cohérence des données et la fiabilité du pipeline.
 - **Versionnement** : Introduire un système de versionnement pour le pipeline, permettant un meilleur suivi des modifications et des améliorations au fil du temps.
 - **Gestion des erreurs** : Ajouter une gestion exhaustive des erreurs et un système de journalisation pour traiter les cas particuliers et les échecs imprévus.
@@ -107,4 +123,3 @@ first-small-etl/
 
 ## 📝 Licence
 Ce projet est à des fins éducatives et est sous licence MIT.
-
