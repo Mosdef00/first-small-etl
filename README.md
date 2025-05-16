@@ -109,6 +109,18 @@ Voici quelques exemples de résultats attendus pour les requêtes SQL dans le pi
    | 8         | 350 HP         |
    ```
 
+   4. **`all_mercedes.sql`** :
+   Cette requête extrait toutes les voitures de marque "Mercedes" dans la base de données.
+
+   **Exemple de résultat** :
+   ```
+   | Model        | Year | Horsepower |
+   |--------------|------|------------|
+   | Mercedes 230 | 1990 | 130 HP     |
+   | Mercedes 240D| 1987 | 90 HP      |
+   | Mercedes 280 | 1985 | 185 HP     |
+   ```
+
 ---
 
 ## 📂 Structure du projet
