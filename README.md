@@ -62,6 +62,45 @@ python src/run_queries.py
 
 ---
 
+### 📊 Exemples de résultats des requêtes SQL
+
+Voici quelques exemples de résultats attendus pour les requêtes SQL dans le pipeline :
+
+1. **`max_horsepower.sql`** :
+   Cette requête sélectionne la voiture avec la puissance maximale (`horsepower_hp`) dans la base de données.
+
+   **Exemple de résultat** :
+   ```
+   | Model        | Horsepower |
+   |--------------|------------|
+   | Ford Mustang | 450 HP     |
+   ```
+
+2. **`cars_by_transmission.sql`** :
+   Cette requête regroupe les voitures par type de transmission (`Transmission`) et compte le nombre de voitures dans chaque catégorie.
+
+   **Exemple de résultat** :
+   ```
+   | Transmission | Count |
+   |--------------|-------|
+   | Manual       | 120   |
+   | Automatic    | 230   |
+   ```
+
+3. **`avg_horsepower.sql`** :
+   Cette requête calcule la puissance moyenne (`horsepower_hp`) des voitures en fonction du nombre de cylindres (`Cylinders`).
+
+   **Exemple de résultat** :
+   ```
+   | Cylinders | Avg Horsepower |
+   |-----------|----------------|
+   | 4         | 150 HP         |
+   | 6         | 200 HP         |
+   | 8         | 350 HP         |
+   ```
+
+   ---
+
 ## 📂 Structure du projet
 
 ```
