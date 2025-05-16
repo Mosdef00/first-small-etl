@@ -4,14 +4,20 @@ import numpy as np
 
 def transform(cars):
     cars = cars.rename(columns={
-    'Unnamed: 0': 'Car Model',
-    'am': 'Transmission',
-    'cyl': 'Cylinders',
+    'Unnamed: 0': 'car_model',
+    'am': 'transmission',
+    'cyl': 'cylinders',
     "hp": "horsepower_hp",
     "mpg": "miles_per_gallon_mpg",
-    'vs': 'Engine shape',
-    'gear': 'Gears'
+    'vs': 'engine_shape',
+    'gear': 'gears'
 })
+    cars['car_model'] = cars['car_model'].replace({'Mazda RX4': 'Mazda RX-4',
+                                                    'Mazda RX4 Wag': 'Mazda RX-4 Wag',
+                                                    'Valiant': 'Plymouth Valiant',
+                                                    'Camaro Z28': 'Chevrolet Camaro Z28'},regex=True)
+    cars['car_model'] = cars['car_model'].str.replace(r'\bHornet\b', 'AMC Hornet', regex=True)
+    cars['car_model'] = cars['car_model'].str.replace(r'\bMerc\b', 'Mercedes', regex=True) 
     cars['Transmission'] = cars['Transmission'].replace({0: 'Automatic', 1: 'Manual'})
     cars['Engine shape'] = cars['Engine shape'].replace({0: 'V-Shaped', 1: 'Straight'})
 

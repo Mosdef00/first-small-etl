@@ -1,3 +1,3 @@
-SELECT c."Transmission", COUNT(*) AS car_count
+SELECT c."transmission", COUNT(*) AS car_count
 FROM cars c
-GROUP BY c."Transmission";
+GROUP BY c."transmission";
