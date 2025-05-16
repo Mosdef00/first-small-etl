@@ -18,8 +18,8 @@ def transform(cars):
                                                     'Camaro Z28': 'Chevrolet Camaro Z28'},regex=True)
     cars['car_model'] = cars['car_model'].str.replace(r'\bHornet\b', 'AMC Hornet', regex=True)
     cars['car_model'] = cars['car_model'].str.replace(r'\bMerc\b', 'Mercedes', regex=True) 
-    cars['Transmission'] = cars['Transmission'].replace({0: 'Automatic', 1: 'Manual'})
-    cars['Engine shape'] = cars['Engine shape'].replace({0: 'V-Shaped', 1: 'Straight'})
+    cars['transmission'] = cars['transmission'].replace({0: 'Automatic', 1: 'Manual'})
+    cars['engine_shape'] = cars['engine_shape'].replace({0: 'V-Shaped', 1: 'Straight'})
 
     return cars
 
