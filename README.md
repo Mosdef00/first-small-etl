@@ -145,7 +145,6 @@ Ces apprentissages constituent une base solide pour approfondir mes connaissance
 - **Docker** : Conteneuriser le projet pour maximiser sa portabilité.
 - **Tests** : Ajouter des tests unitaires pour valider chaque étape ETL.
 - **CI/CD** : Intégrer un pipeline CI/CD pour tester et déployer rapidement les améliorations.
-- **Documentation** : Ajouter des exemples visuels des résultats de requêtes SQL.
 
 ---
 
