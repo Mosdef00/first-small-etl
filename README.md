@@ -19,6 +19,14 @@ Un projet de pipeline ETL (Extract, Transform, Load) minimaliste conçu à des f
 
 ---
 
+## 🗺️ Diagramme ETL
+
+Voici un aperçu visuel du pipeline ETL utilisé dans ce projet :
+
+![Diagramme ETL](data/assets/etl_diagram.png)
+
+---
+
 ## 📦 Installation
 
 1. **Cloner le dépôt** :
@@ -99,15 +107,17 @@ Voici quelques exemples de résultats attendus pour les requêtes SQL dans le pi
    | 8         | 350 HP         |
    ```
 
-   ---
+---
 
 ## 📂 Structure du projet
 
 ```
 first-small-etl/
 ├── data/
-│   └── input/
-│       └── cars.csv
+│   ├── input/
+│   │   └── cars.csv
+│   └── assets/
+│       └── etl_diagram.png
 ├── notebooks/
 │   └── exploration.ipynb
 ├── query_results/
