@@ -81,44 +81,44 @@ Voici quelques exemples de résultats attendus pour les requêtes SQL dans le pi
 
    **Exemple de résultat** :
    ```
-   | Model        | Horsepower |
-   |--------------|------------|
-   | Ford Mustang | 450 HP     |
+   | car_model        | horsepower_hp |
+   |------------------|---------------|
+   | Ford Mustang     | 450           |
    ```
 
 2. **`cars_by_transmission.sql`** :
-   Cette requête regroupe les voitures par type de transmission (`Transmission`) et compte le nombre de voitures dans chaque catégorie.
+   Cette requête regroupe les voitures par type de transmission (`transmission`) et compte le nombre de voitures dans chaque catégorie.
 
    **Exemple de résultat** :
    ```
-   | Transmission | Count |
-   |--------------|-------|
-   | Manual       | 120   |
-   | Automatic    | 230   |
+   | transmission | car_count |
+   |--------------|-----------|
+   | Manual       | 120       |
+   | Automatic    | 230       |
    ```
 
 3. **`avg_horsepower.sql`** :
-   Cette requête calcule la puissance moyenne (`horsepower_hp`) des voitures en fonction du nombre de cylindres (`Cylinders`).
+   Cette requête calcule la puissance moyenne (`horsepower_hp`) des voitures en fonction du nombre de cylindres (`cylinders`).
 
    **Exemple de résultat** :
    ```
-   | Cylinders | Avg Horsepower |
+   | cylinders | avg_horsepower |
    |-----------|----------------|
-   | 4         | 150 HP         |
-   | 6         | 200 HP         |
-   | 8         | 350 HP         |
+   | 4         | 150            |
+   | 6         | 200            |
+   | 8         | 350            |
    ```
 
-   4. **`all_mercedes.sql`** :
+4. **`all_mercedes.sql`** :
    Cette requête extrait toutes les voitures de marque "Mercedes" dans la base de données.
 
    **Exemple de résultat** :
    ```
-   | Model        | Year | Horsepower |
-   |--------------|------|------------|
-   | Mercedes 230 | 1990 | 130 HP     |
-   | Mercedes 240D| 1987 | 90 HP      |
-   | Mercedes 280 | 1985 | 185 HP     |
+   | car_model        | horsepower_hp |
+   |------------------|---------------|
+   | Mercedes 230     | 130 HP        |
+   | Mercedes 240D    | 90 HP         |
+   | Mercedes 280     | 185 HP        |
    ```
 
 ---
@@ -131,14 +131,21 @@ first-small-etl/
 │   ├── input/
 │   │   └── cars.csv
 │   └── assets/
+|       ├── etl_diagram.md
 │       └── etl_diagram.png
 ├── notebooks/
 │   └── exploration.ipynb
 ├── query_results/
+|   ├── max_horsepower.csv
+│   ├── cars_by_transmission.csv
+|   ├── all_mercedes.csv
+│   └── avg_horsepower.csv
 ├── sql/
 │   ├── max_horsepower.sql
 │   ├── cars_by_transmission.sql
+|   ├── all_mercedes.sql
 │   └── avg_horsepower.sql
+|   
 ├── src/
 │   ├── extract.py
 │   ├── transform.py
