@@ -23,7 +23,9 @@ Un projet de pipeline ETL (Extract, Transform, Load) minimaliste conçu à des f
 
 Aperçu visuel du pipeline utilisé dans ce projet :
 
+<div align="center>
 <img src="data/assets/etl_diagram.png" alt="Diagramme ETL" width="300">
+</div>
 
 ---
 
