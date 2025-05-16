@@ -116,9 +116,9 @@ Voici quelques exemples de résultats attendus pour les requêtes SQL dans le pi
    ```
    | car_model        | horsepower_hp |
    |------------------|---------------|
-   | Mercedes 230     | 130 HP        |
-   | Mercedes 240D    | 90 HP         |
-   | Mercedes 280     | 185 HP        |
+   | Mercedes 230     | 130           |
+   | Mercedes 240D    | 90            |
+   | Mercedes 280     | 185           |
    ```
 
 ---
