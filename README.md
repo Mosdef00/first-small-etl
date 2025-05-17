@@ -15,6 +15,7 @@ Un projet de pipeline ETL (Extract, Transform, Load) minimaliste conçu à des f
 - **Pandas** : Manipulation des données.
 - **SQLAlchemy** : Connexion à PostgreSQL.
 - **PostgreSQL** : Stockage des données.
+- **pytest** : Écriture et exécution de tests.
 - **dotenv** : Gestion des variables d'environnement.
 
 ---
@@ -72,7 +73,45 @@ python src/run_queries.py
 
 ---
 
-### 📊 Exemples de résultats des requêtes SQL
+## 🧪 Tests
+
+Le projet inclut une suite complète de tests pour valider chaque étape du pipeline ETL et les fonctionnalités associées.
+
+### **Structure des tests**
+Voici la structure des fichiers de tests :
+```
+tests/
+├── conftest.py                      # Configurations globales pour pytest
+├── test_extract.py                  # Tests pour la phase d'extraction
+├── test_transform.py                # Tests pour la phase de transformation
+├── test_load.py                     # Tests pour la phase de chargement
+├── test_run.py                      # Test d'intégration pour le pipeline complet
+├── test_run_queries.py              # Tests pour l'exécution des requêtes SQL
+├── test_run_queries_integration.py  # Tests d'intégration pour les requêtes SQL
+```
+
+### **Exécuter les tests**
+Lancez tous les tests avec la commande suivante :
+```bash
+pytest tests/
+```
+
+Vous pouvez également exécuter un test spécifique :
+```bash
+pytest tests/test_transform.py
+```
+
+### **Exemple de validation**
+- **Test d'intégration du pipeline** : Assure que les étapes `extract`, `transform` et `load` sont correctement orchestrées.
+- **Test unitaire pour `extract`** : Vérifie que les données sont correctement lues à partir du fichier CSV.
+- **Test unitaire pour `load`** : Valide que les données sont correctement insérées dans la base de données PostgreSQL.
+
+### **Logs et erreurs**
+Les logs des tests et les messages d'erreur détaillés sont affichés pour faciliter le débogage.
+
+---
+
+## 📊 Exemples de résultats des requêtes SQL
 
 Voici quelques exemples de résultats attendus pour les requêtes SQL dans le pipeline :
 
@@ -152,6 +191,14 @@ first-small-etl/
 │   ├── load.py
 │   ├── run.py
 │   ├── run_queries.py
+├── tests/
+│   ├── conftest.py
+│   ├── test_extract.py
+│   ├── test_transform.py
+│   ├── test_load.py
+│   ├── test_run.py
+│   ├── test_run_queries.py
+│   ├── test_run_queries_integration.py
 ├── requirements.txt
 ├── .env
 └── README.md
@@ -166,6 +213,7 @@ Ce projet m'a permis de :
 - Appliquer les bibliothèques Python comme `pandas` pour la manipulation de données et `SQLAlchemy` pour interagir avec une base de données PostgreSQL.
 - Comprendre l'importance de structurer les étapes d'un pipeline de données en modules séparés pour faciliter la maintenance et la réutilisation.
 - Apprendre à utiliser Git et GitHub pour gérer le versionnement du code et documenter un projet de manière professionnelle.
+- Intégrer des **tests unitaires et d'intégration** pour garantir la fiabilité du pipeline.
 
 Ces apprentissages constituent une base solide pour approfondir mes connaissances dans des outils plus avancés tels qu'Apache Airflow pour l'orchestration et Docker pour la conteneurisation.
 
@@ -174,7 +222,7 @@ Ces apprentissages constituent une base solide pour approfondir mes connaissance
 ## 🐾 Améliorations futures
 - **Apache Airflow** : Automatiser l'orchestration du pipeline.
 - **Docker** : Conteneuriser le projet pour maximiser sa portabilité.
-- **Tests** : Ajouter des tests unitaires pour valider chaque étape ETL.
+- **Tests avancés** : Ajouter des tests de performance et de charge.
 - **CI/CD** : Intégrer un pipeline CI/CD pour tester et déployer rapidement les améliorations.
 
 ---
